@@ -1,0 +1,19 @@
+@model PROVASAEP.Models.Movimentacao
+
+<h2>Excluir Movimentação</h2>
+
+<p>Tem certeza que deseja excluir esta movimentação?</p>
+
+<div>
+    <p><strong>Material:</strong> @Model.Material.Nome</p>
+    <p><strong>Tipo:</strong> @Model.Tipo</p>
+    <p><strong>Quantidade:</strong> @Model.Quantidade</p>
+    <p><strong>Data:</strong> @Model.DataMovimentacao.ToString("dd/MM/yyyy")</p>
+</div>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id" />
+
+    <button type="submit" class="btn btn-danger">Excluir</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

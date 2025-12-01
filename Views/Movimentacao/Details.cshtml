@@ -1,0 +1,12 @@
+@model PROVASAEP.Models.Movimentacao
+
+<h2>Detalhes da Movimentação</h2>
+
+<div>
+    <p><strong>Material:</strong> @Model.Material.Nome</p>
+    <p><strong>Tipo:</strong> @Model.Tipo</p>
+    <p><strong>Quantidade:</strong> @Model.Quantidade</p>
+    <p><strong>Data:</strong> @Model.DataMovimentacao.ToString("dd/MM/yyyy")</p>
+</div>
+
+<a asp-action="Index" class="btn btn-primary">Voltar</a>

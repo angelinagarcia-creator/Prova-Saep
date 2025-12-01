@@ -1,0 +1,35 @@
+@model IEnumerable<PROVASAEP.Models.Movimentacao>
+
+<h2>Movimentações de Estoque</h2>
+
+@if (TempData["Alerta"] != null)
+{
+    <div class="alert alert-warning">@TempData["Alerta"]</div>
+}
+
+<p>
+    <a class="btn btn-primary" asp-action="Create">Registrar Movimentação</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Material</th>
+            <th>Tipo</th>
+            <th>Data</th>
+            <th>Quantidade</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Material.Nome</td>
+                <td>@item.Tipo</td>
+                <td>@item.DataMovimentacao.ToString("dd/MM/yyyy")</td>
+                <td>@item.Quantidade</td>
+            </tr>
+        }
+    </tbody>
+</table>

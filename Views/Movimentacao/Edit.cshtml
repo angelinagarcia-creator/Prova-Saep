@@ -1,0 +1,42 @@
+@model PROVASAEP.Models.Movimentacao
+
+<h2>Editar Movimentação</h2>
+
+<form asp-action="Edit" method="post">
+
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label>Material</label>
+        <select asp-for="MaterialId" class="form-control" asp-items="ViewBag.MaterialId"></select>
+    </div>
+
+    <div class="form-group">
+        <label>Tipo da Movimentação</label>
+        <select asp-for="Tipo" class="form-control">
+            <option value="Entrada">Entrada</option>
+            <option value="Saída">Saída</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Quantidade</label>
+        <input asp-for="Quantidade" class="form-control" />
+        <span asp-validation-for="Quantidade" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label>Data</label>
+        <input asp-for="DataMovimentacao" type="date" class="form-control" />
+    </div>
+
+    <br />
+
+    <button type="submit" class="btn btn-success">Salvar Alterações</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

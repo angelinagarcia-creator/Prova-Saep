@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Página Inicial";
+}
+
+<h2>Sistema de Gestão de Materiais - SAEP</h2>
+
+<p>Bem-vindo ao sistema de controle de estoque.</p>
+
+<div class="list-group">
+    <a class="list-group-item list-group-item-action" asp-controller="Material" asp-action="Index">
+        Materiais
+    </a>
+    <a class="list-group-item list-group-item-action" asp-controller="Movimentacao" asp-action="Index">
+        Movimentações de Estoque
+    </a>
+    <a class="list-group-item list-group-item-action" asp-controller="Usuario" asp-action="Index">
+        Usuários
+    </a>
+</div>
